@@ -47,16 +47,25 @@ the valid values for num1:1, 2, 3, 4, 5, 6, 7, 8, 9, 10
 num1 = 4;
 num2 = 6
 const theSum = num1 + num2;
+console.log(theSum);
 
 // Exercise 8. Now we will try some multiplication.
 // Make a new variable called 'theProduct', multiply num1 and num2 and assign
 // the resulting value to 'theProduct'.
+
+const theProduct = num1 * num2;
+
+console.log(theProduct);
 
 // Exercise 9.
 // Make a new variable called 'statement' and using 'myName' and
 // 'dreamDestination' and the concatenation method of your choice, make the
 // value of statement to be:
 // "Hi, my name is <your name>, and I can't wait to visit <your destination>!"
+
+let statement = `Hi, my name is ${myName}, and I can't wait to visit ${dreamDestination}`;
+console.log(statement);
+
 
 // *NOTE* For the following exercises, put your answers in the line below
 // the description of each exercise. For example, below a prompt, you may see:
@@ -67,17 +76,19 @@ const theSum = num1 + num2;
 // Exercise 10. What is the data type of the value stored in 'dreamDestination',
 // place your answer in the quotes below:
 
-const myAnswerForExercise10 = "";
+const myAnswerForExercise10 = "String";
+
+
 
 // Exercise 11. What is the data type of the value stored in 'product',
 // place your answer in the quotes below:
 
-const myAnswerForExercise11 = "";
+const myAnswerForExercise11 = "Number";
 
 // Exercise 12. What do you think the value of emptyVariable is?
 // Place your answer below:
 
-const myAnswerForExercise12 = "";
+const myAnswerForExercise12 = "undefined";
 
 // Exercise 13. If
 const A = "R";
@@ -86,38 +97,46 @@ const C = 4;
 const D = "D";
 
 // What is the value of B + C
-const myAnswerForExercise13 = "";
+const myAnswerForExercise13 = 5;
 
 // Exercise 14 What is the value of
 // A + "n" + D
-const myAnswerForExercise14 = "";
+const myAnswerForExercise14 = "RnD";
 
 // Exercise 15 What is the value of
-// A + B * 2 + D + C / 2:
-const myAnswerForExercise15 = "";
+//console.log(A + B * 2 + D + C / 2) 
+const myAnswerForExercise15 = "R2D2";
 
 // Exercise 16 What is the value of A * B
-const myAnswerForExercise16 = "";
+console.log(A *B);
+const myAnswerForExercise16 = "R";
+// Because of the * , JS tried to convert to numbers, 
+// but R cannot be converted to number, so not a number is output
 
 // Exercise 17 What is the value of true || false
-const myAnswerForExercise17 = "";
+const myAnswerForExercise17 = true;
+console.log(true || false) 
+
 
 // Exercise 18 What is the value of 1 === "1"
-const myAnswerForExercise18 = "";
+const myAnswerForExercise18 = false;
 
 // Exercise 19 What is the value of 1 == "1"
-console.log(1 == "1")
+// console.log(1 == "1")
 const myAnswerForExercise19 = true;
 
 // Exercise 20 What is the value of 1 < 1
 const myAnswerForExercise20 = false;
 
 // Exercise 21 What is the value of 1 < 2 < 3
-console.log( 1 < 2 < 3)
+// console.log( 1 < 2 < 3)
 const myAnswerForExercise21 = true;
 
 // Exercise 22 What is the value of 2 < 1 < 3
-const myAnswerForExercise22 = "";
+const myAnswerForExercise22 = true;
+// Left result first, which is 2< 1 is false(0)
+// 0 < 3, which is true
+console.log( 2 < 1 < 3)
 
 // Congrats, you made it to the end!
 // Did you find this easy or hard? If you used references, which ones helped you?
