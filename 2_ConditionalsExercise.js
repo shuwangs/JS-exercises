@@ -14,7 +14,7 @@
 //   // ------------------------------------------
 //   // Write your code for exercise 0 below here:
 //   // ------------------------------------------
-//
+//   myAnswer = num1 + num2;
 //   // ------------------------------------------
 //   // And above here
 //   // ------------------------------------------
@@ -51,16 +51,20 @@
 // "The value of num1 is <num1 value> and is greater than 10".
 
 function exercise1(num1) {
-  let answer1 = "";
+  let answer1 = "num1 is small";
+
   // ------------------------------------------
   // Write your code for exercise 1 below here:
   // ------------------------------------------
-
+  if (num1 > 10) {
+    answer1= `The value of num1 is ${num1} and is greater than 10`;
+  }
   // ------------------------------------------
   // And above here
   // ------------------------------------------
   return answer1;
 }
+console.log(exercise1(15));
 
 // EXERCISE 2.
 // Write an if/else conditional statement that if given a number will assign
@@ -73,16 +77,24 @@ function exercise1(num1) {
 // "4 is even"
 
 function exercise2(num2) {
+  // Here does not consider nums2 == 0 case
   let answer2;
   // --------------------------------------------
   // Write your code for the exercise below here:
   // --------------------------------------------
+  if (num2 % 2 == 0) {
+    answer2 = `${num2} is even`;
+  } else {
+    answer2 = `${num2} is odd`;
+  }
 
   // --------------------------------------------
   // And above here
   // --------------------------------------------
   return answer2;
 }
+console.log(exercise2(4));
+console.log(exercise2(7));
 
 // EXERCISE 3.
 // Write an if/else if/else block such that if `num3` is positive, then
@@ -98,12 +110,22 @@ function exercise3(num3) {
   // --------------------------------------------
   // Write your code for the exercise below here:
   // --------------------------------------------
-
+  if (num3 > 0) {
+    answer3 = `${num3} is postive`;
+  } else if (num3 < 0) {
+    answer3 = `${num3} is negative`;
+  } else {
+    answer3 = `${num3} is zero`;
+  }
   // --------------------------------------------
   // And above here
   // --------------------------------------------
   return answer3;
 }
+console.log(exercise3(0));
+console.log(exercise3(7));
+console.log(exercise3(-7));
+
 
 // EXERCISE 4.
 // Write an if/else statement such that if `varA` and `varB` are strings or
@@ -116,17 +138,32 @@ function exercise4(varA, varB) {
   // --------------------------------------------
   // Write your code for the exercise below here:
   // --------------------------------------------
-
+  if (typeof(varA)=== typeof(varB) && (typeof(varA) === 'string' || typeof(varA) === 'number') && varA === varB) {
+    answer4 = "varA and varB are equal";
+  } else {
+    answer4 = "varA and varB differ";
+  }
   // --------------------------------------------
   // And above here
   // --------------------------------------------
   return answer4;
 }
+console.log(exercise4(0, "ABS"));
+console.log(exercise4(0, 234));
+console.log(exercise4(234, '234'));
+console.log(exercise4(234, 234));
+console.log(exercise4(true, true));
+console.log(exercise4(true, false));
 
 // EXERCISE 5.
 // In exercise 4, what are some of the unexpected cases where `varA` and `varB`
 // seemed like they are equal, but would not pass the tests? In your analysis
 // consider other data types beside strings and variables.
+
+/* First I checked if the types of varA and varB are the same, => remove cases like 234 and '234'
+    then I checked if the type is string or number, => remove cases like true and true
+    finally I checked if the values are equal.
+*/
 
 // EXERCISE 6.
 // Here, assign the value of true to answer6 if:
@@ -137,12 +174,21 @@ function exercise6(varA, varB, varC) {
   // --------------------------------------------
   // Write your code for the exercise below here:
   // --------------------------------------------
-
+  if (varA === varB && varA !== varC && varB !== varC) {
+    answer6 = true;
+  } else {
+    answer6 = false;
+  }
   // --------------------------------------------
   // And above here
   // --------------------------------------------
   return answer6;
 }
+
+console.log(exercise6(0, "ABS", 0));
+console.log(exercise6(234, '234', 234));
+console.log(exercise6(true, 1, 1));
+console.log(exercise6(true, true, 1));
 
 // EXERCISE 7.
 // Use a switch conditional statement with case clauses such that if `num7` is
@@ -162,12 +208,33 @@ function exercise7(num7) {
   // --------------------------------------------
   // Write your code for the exercise below here:
   // --------------------------------------------
-
+  switch(num7) {
+    case 1:
+      answer7 = "You won!";
+      break;
+    case 7:
+      answer7 = "You are lucky!";
+      break;
+    case 101:
+      answer7 = "Welcome to coding 101!";
+      break;
+    case 1000000:
+      answer7 = "You are one in a million!";
+      break;
+    default:
+      answer7 = "Thanks for that!";
+  }
   // --------------------------------------------
   // And above here
   // --------------------------------------------
   return answer7;
 }
+console.log(exercise7(1));
+console.log(exercise7(7));
+console.log(exercise7(101));
+console.log(exercise7(1000000));
+console.log(exercise7(15));
+console.log(exercise7(true));
 
 // EXERCISE 8.
 // Using any conditional assign the value of true to answer8 if:
@@ -179,12 +246,21 @@ function exercise8(amount1, amount2, minimum, maximum) {
   // --------------------------------------------
   // Write your code for the exercise below here:
   // --------------------------------------------
-
+  if (minimum <= amount1 && amount1 <= maximum && minimum <= amount2 && amount2 <= maximum) {
+    answer8 = true;
+  } else {
+    answer8 = false;
+  }
   // --------------------------------------------
   // And above here
   // --------------------------------------------
   return answer8;
 }
+console.log(exercise8(0, "ABS", 0, 1)); // should be false
+console.log(exercise8(0, 10, 1, 20)); // should be false
+console.log(exercise8(5, 10, 1, 20)); // should be true
+
+
 
 // EXERCISE 9.
 // In this exercise, if `item` is a number, follow the rules given in Exercise 7
@@ -195,15 +271,44 @@ function exercise8(amount1, amount2, minimum, maximum) {
 // "Please send a number, that was a boolean."
 function exercise9(item) {
   let answer9;
+
   // --------------------------------------------
   // Write your code for the exercise below here:
   // --------------------------------------------
+  if(typeof(item) !== "number"){
+    answer9 = `Please send a number, that was a ${typeof(item)}.`;
+  } else {
+    switch(item) {
+      case 1:
+      answer9 = "You won!";
+      break;
+    case 7:
+      answer9 = "You are lucky!";
+      break;
+    case 101:
+      answer9 = "Welcome to coding 101!";
+      break;
+    case 1000000:
+      answer9 = "You are one in a million!";
+      break;
+
+    default:
+      answer9 = "Thanks for that!";
+    }
+ 
+  }
 
   // --------------------------------------------
   // And above here
   // --------------------------------------------
   return answer9;
 }
+
+console.log(exercise9(1000000));
+console.log(exercise9(15));
+console.log(exercise7(true));
+
+
 
 // EXERCISE 10.
 // This question is a modified version of a classic programming question
@@ -220,16 +325,29 @@ function exercise10(num10) {
   // --------------------------------------------
   // Write your code for the exercise below here:
   // --------------------------------------------
-
+  if (num10 % 15 ===0){
+    answer10 = "Fizz Buzz";
+  } else if (num10 % 3 === 0) {
+    answer10 = "Fizz";
+  } else if (num10 % 5 === 0) {
+    answer10 = "Buzz";
+  } else {
+    answer10 = num10;
+  }
   // --------------------------------------------
   // And above here
   // --------------------------------------------
   return answer10;
 }
+console.log(exercise10(15));
+console.log(exercise10(3));
+console.log(exercise10(5));
+console.log(exercise10(1));
 
 // Congrats, you made it to the end! You rock!
 // Did you find this easy or hard? If you used references, which ones helped you?
 // Please answer in a comment below.
 //
+// I did not use references. 
 
 // Email your file to us or commit your file to GitHub and email us a link.
