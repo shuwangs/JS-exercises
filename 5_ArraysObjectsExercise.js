@@ -34,6 +34,9 @@ const assortedThings = ["book", 23, "computer", "desk", 4, 3];
 // Item #1 is 4
 // Item #2 is Hello World
 
+for (let i = 0; i <assortedThings.length; i++) {
+    console.log("Item #" + i + " is " + assortedThings[i]);
+}
 
 // ...
 // Exercise 11. Write a function that takes an array of numbers as a parameter. For each number in the array,
@@ -45,17 +48,43 @@ const assortedThings = ["book", 23, "computer", "desk", 4, 3];
 // 50 small
 //
 // Then write some function calls you would use to test your function.
+function checkNumbers(arr){
+    for (let i = 0; i < arr.length; i++) {
+        if(arr[i] > 100){
+            console.log(`${arr[i]} BIG`);
+        } else if (arr[i] >= 0 && arr[i] <= 100){
+            console.log(`${arr[i]} small`);
+        } else {
+            console.log(`${arr[i]} negative`);
+        }
+    }
+}
+checkNumbers([-2, 200, 50]);
+function checkNumber2(nums) {
+    checkNumbers(nums);
+}
+
+checkNumber2([-2, 200, 50]);
+
 
 // Exercise 12. Make an object called me that contains the following keys: name, favoriteAnimal, favoriteNumber
 // The values of those keys can be whatever you choose.
-
+const me ={
+    name: "John",
+    favoriteAnimal: "cat",
+    favoriteNumber: 4
+}
 // Exercise 13. Add another 2 keys and values to the object (you choose what they are)
+me.job = "developer";
+me.age = 55;
 
 // Exercise 14. Update the favoriteAnimal value to something different
+me.favoriteAnimal = "bobocat";
 
 // Exercise 15. Print the value of favoriteAnimal.
 // Note: there are at least 2 ways to get the value of a key, try to write both.
-
+console.log(me.favoriteAnimal);
+console.log(me["favoriteAnimal"]);
 // Congrats, you made it to the end!
 // Did you find this easy or hard? If you used references, which ones helped you?
 // Please answer in a comment below.
